@@ -139,6 +139,7 @@ body {
   background-color: var(--color-purple-600);
   justify-content: center;
   color: var(--color-blue-100);
+  margin-bottom: 1rem;
 }
 
 .icon--html {
@@ -219,6 +220,15 @@ body {
 .btn.active.error .option-number {
   color: var(--color-blue-50);
   background-color: var(--color-red-500);
+}
+.error-msg {
+  color: var(--color-red-500);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.error-msg.active {
+  display: flex;
 }
 @media (min-width: 700px) {
   .container {

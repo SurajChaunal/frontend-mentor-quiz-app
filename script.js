@@ -9,7 +9,7 @@ const optionsContainerEl = document.querySelector(".options-question");
 const titleSectionContainer = document.querySelector(".title-section-quiz");
 const submitBtn = document.querySelector(".btn--submit");
 const againBtn = document.querySelector(".btn--again");
-
+const errorEl = document.querySelector(".error-msg");
 //state variables
 let questions,
   length,
@@ -105,6 +105,11 @@ function handleSubmit(e) {
     nextQuestion();
     return;
   }
+  if (!currSelected) {
+    errorEl.classList.add("active");
+    return;
+  }
+
   const currAnswer = currSelected
     .querySelector(".option-text")
     .textContent.trim();
@@ -113,6 +118,8 @@ function handleSubmit(e) {
     totalScore += 10;
   } else currSelected.classList.add("error");
   submitBtn.textContent = "Next Question";
+  currSelected = "";
+  errorEl.classList.remove("active");
 }
 
 async function startQuiz(e) {
