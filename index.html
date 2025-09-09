@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Frontend quiz app</title>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <!-- Quiz menu start -->
+    <main class="container">
+      <header class="header">
+        <div class="header--info">
+          <img
+            src="./images/icon-accessibility.svg"
+            alt="icon"
+            class="header-icon"
+          />
+          <span class="header-title">Accessibility</span>
+        </div>
+        <div class="header--mode">
+          <img src="./images/icon-sun-dark.svg" alt="icon sun" />
+          <img src="./images/icon-moon-dark.svg" alt="icon moon" />
+        </div>
+      </header>
+      <section class="section intro--section">
+        <section class="title-section">
+          <h1 class="section-header">
+            Welcome to the <strong>Frontend Quiz!</strong>
+          </h1>
+          <h2 class="secondary-heading">Pick a subject to get started.</h2>
+        </section>
+        <section class="options options--subject">
+          <button class="btn" role="button" data-subject="HTML">
+            <img
+              src="./images/icon-html.svg"
+              class="btn--icon icon--html"
+            /><span>HTML</span>
+          </button>
+          <button class="btn" role="button" data-subject="CSS">
+            <img src="./images/icon-css.svg" class="btn--icon icon--css" /><span
+              >CSS</span
+            >
+          </button>
+          <button class="btn" role="button" data-subject="JavaScript">
+            <img
+              src="./images/icon-javascript.svg"
+              class="btn--icon icon--js"
+            /><span>JavaScript</span>
+          </button>
+          <button class="btn" role="button" data-subject="Accessibility">
+            <img
+              src="./images/icon-accessibility.svg"
+              class="btn--icon icon--accessibility"
+            /><span>Accessibility</span>
+          </button>
+        </section>
+      </section>
+
+      <section class="section quiz--section">
+        <section class="title-section title-section-quiz"></section>
+        <div>
+          <section class="options options-question"></section>
+          <button class="btn btn--submit" role="button">Submit Answer</button>
+        </div>
+      </section>
+
+      <section class="section final--section active">
+        <section class="title-section">
+          <h1 class="section-header">
+            Quiz completed <strong>You scored...</strong>
+          </h1>
+        </section>
+        <div>
+
+          <section class="score-section">
+            <div class="score-display">
+              
+                <img
+                src="./images/icon-accessibility.svg"
+                alt="icon"
+                class="header-icon"
+                />
+                <span class="header-title">Accessibility</span>
+              
+              <h1 class="final-score">90</h1>
+              <h3 class="secondary-heading">Out of 100</h3>
+            </section>
+            <button class="btn btn--again" role="button">Play Again!</button>
+          </div>
+      </section>
+
+      <!-- Quiz completed end -->
+    </main>
+  </body>
+</html>
+
+<!-- <section class="title-section">
+          <p class="secondary-heading">Question no ${number} out of ${length}</p>
+          <h1 class="section-header">${currQuestion.question}</h1>
+          <input type="range" min="1" max=${length} value=${number} class="input--range" />
+        </section>
+        <section class="options options-question">
+          <button class="btn" role="button">
+          <span class="option-number"> A </span>
+          <span class="option-text"> ${currQuestion.options[0]}</span>
+          <span class="option-result">
+          <img src="./images/icon-correct.svg" class
+          ="correct-icon"/>
+          <img src="./images/icon-error.svg" class="error-icon"/>
+          </span>
+         </button>
+          <button class="btn" role="button"> 
+          <span class="option-number"> B </span>
+          <span class="option-text"> ${currQuestion.options[1]}</span>
+          <span class="option-result">
+          <img src="./images/icon-correct.svg" class
+          ="correct-icon"/>
+          <img src="./images/icon-error.svg" class="error-icon"/>
+          </span>
+          </button>
+          <button class="btn" role="button">  
+          <span class="option-number"> C </span>
+          <span class="option-text">${currQuestion.options[2]}</span>
+          <span class="option-result">
+          <img src="./images/icon-correct.svg" class
+          ="correct-icon"/>
+          <img src="./images/icon-error.svg" class="error-icon"/>
+          </span></button>
+          <button class="btn" role="button">
+          <span class="option-number"> D </span>
+          <span class="option-text">${currQuestion.options[3]}</span>
+          <span class="option-result">
+          <img src="./images/icon-correct.svg" class
+          ="correct-icon"/>
+          <img src="./images/icon-error.svg" class="error-icon"/>
+          </span> 
+        </button>
+          </button>
+          <button class="btn btn--submit" role="button">Submit Answer</button>
+        </section> -->
