@@ -48,8 +48,11 @@ body {
   height: 10svh;
   margin-bottom: 2rem;
 }
-.header--info {
-  display: none;
+.header-subject {
+  opacity: 0;
+}
+.subject--info {
+  display: flex;
   align-items: center;
   gap: 1rem;
 }
@@ -81,6 +84,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   align-self: start;
+  padding: 2rem 1rem;
 }
 .section-header {
   font-size: 4.8rem;
@@ -171,18 +175,21 @@ body {
 .option-result {
   margin-left: auto;
 }
-.score-section {
-  background-color: var(--color-white);
-  border-radius: 1rem;
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
+
 .score-display {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  background-color: var(--color-white);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.subject-title {
+  font-size: 2.4rem;
+  font-weight: 500;
 }
 .final-score {
   font-size: 6rem;
@@ -260,5 +267,8 @@ body {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 4rem;
+  }
+  .btn {
+    font-weight: 500;
   }
 }

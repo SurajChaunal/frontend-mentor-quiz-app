@@ -7,15 +7,19 @@ const headerTitleEl = document.querySelector(".header-title");
 const headerIconEl = document.querySelector(".header-icon");
 const optionsContainerEl = document.querySelector(".options-question");
 const titleSectionContainer = document.querySelector(".title-section-quiz");
+const scoreDisplayContainer = document.querySelector(".score-display");
+const headerSubjectContainer = document.querySelector(".header-subject");
 const submitBtn = document.querySelector(".btn--submit");
 const againBtn = document.querySelector(".btn--again");
 const errorEl = document.querySelector(".error-msg");
+
 //state variables
 let questions,
   length,
   currQuestion,
   currSelected,
   currentInd = 0,
+  currentSubject = "",
   totalScore = 0;
 
 function setHeaderInfo(subject) {
@@ -42,7 +46,17 @@ function setButtonActive(targetBtn) {
 function showScoreUI() {
   quizSectionContainer.classList.remove("active");
   finalSectionContainer.classList.add("active");
-  finalSectionContainer.querySelector(".final-score").textContent = totalScore;
+
+  scoreDisplayContainer.innerHTML = `    
+        <div class='subject--info'>
+        <img src="./images/icon-${currentSubject}.svg"
+          alt="icon"
+          class="header-icon"
+          />
+          <span class="subject-title">${currentSubject}</span>
+          </div>
+          <h1 class="final-score">${totalScore}</h1>
+          <h3 class="secondary-heading">Out of 100</h3>`;
 }
 
 function nextQuestion() {
@@ -124,11 +138,13 @@ function handleSubmit(e) {
 
 async function startQuiz(e) {
   if (!e.target.classList.contains("btn")) return;
-  await extractQuestions(e.target.dataset.subject);
+  currentSubject = e.target.dataset.subject;
+  await extractQuestions(currentSubject);
   length = questions.length;
 
   introSectionContainer.classList.remove("active");
   quizSectionContainer.classList.add("active");
+  // headerSubjectContainer.style.opacity = 1;
   setQuestion(currentInd);
 }
 function playAgain() {
