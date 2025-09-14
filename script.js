@@ -12,6 +12,7 @@ const headerSubjectContainer = document.querySelector(".header-subject");
 const submitBtn = document.querySelector(".btn--submit");
 const againBtn = document.querySelector(".btn--again");
 const errorEl = document.querySelector(".error-msg");
+const toogleBtn = document.querySelector(".switch");
 
 //state variables
 let questions,
@@ -79,9 +80,7 @@ function setQuestion(number) {
   let titlehtml = `
       <p class="secondary-heading">Question ${number + 1} out of ${length}</p>
       <h1 class="section-header">${currQuestion.question}</h1>
-      <progress class="progress-bar" max=${length} value=${
-    number + 1
-  }></progress>
+      <progress class="progress-bar" max=${length} value=${number}></progress>
       `;
   titleSectionContainer.innerHTML = "";
   titleSectionContainer.insertAdjacentHTML("afterbegin", titlehtml);
@@ -89,7 +88,7 @@ function setQuestion(number) {
   optionsContainerEl.innerHTML = "";
   console.log(currQuestion);
   let optionHtml;
-  for (i = 0; i < 4; i++) {
+  for (let i = 0; i < 4; i++) {
     const btn = document.createElement("button");
     btn.className = "btn";
 
@@ -155,8 +154,11 @@ function playAgain() {
   currentInd = 0;
   currSelected = "";
 }
-
+function handleToggleSwitch() {
+  document.body.classList.toggle("dark-mode");
+}
 introOptionsContainerEl.addEventListener("click", startQuiz);
 optionsContainerEl.addEventListener("click", handleAnswer);
 submitBtn.addEventListener("click", handleSubmit);
 againBtn.addEventListener("click", playAgain);
+toogleBtn.addEventListener("change", handleToggleSwitch);
